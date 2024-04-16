@@ -18,4 +18,5 @@ RUN apt-get clean && \
 
 # Expose SSH port
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+
+CMD /usr/sbin/sshd -D & echo "SSH server is started..." && tail -f /dev/null
